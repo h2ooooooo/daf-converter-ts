@@ -2,7 +2,7 @@
 
 Convert **Duplicator / Duplicator Pro dup-archive (`.daf`) backups** into a regular `.zip`, a folder, or just the WordPress database as plain `.sql`. No PHP, no `installer.php` and no WordPress needed.
 
-📖 **Docs:** https://jalsoedesign.github.io/daf-converter/
+📖 **Docs:** https://h2ooooooo.github.io/daf-converter/
 
 ## Install
 
