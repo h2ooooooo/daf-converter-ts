@@ -1,0 +1,82 @@
+{
+  "name": "@jalsoedesign/daf-converter",
+  "version": "1.0.0",
+  "description": "Convert Duplicator / Duplicator Pro dup-archive (.daf) backups into .zip files or folders, or extract just the WordPress database as .sql",
+  "keywords": [
+    "duplicator",
+    "duplicator-pro",
+    "daf",
+    "duparchive",
+    "dup-archive",
+    "dup-installer",
+    "wordpress",
+    "backup",
+    "zip",
+    "sql",
+    "mysql"
+  ],
+  "author": "jalsoedesign",
+  "license": "MIT",
+  "homepage": "https://jalsoedesign.github.io/daf-converter/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jalsoedesign/daf-converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jalsoedesign/daf-converter/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "daf-to-zip": "dist/cli/dafToZip.mjs",
+    "daf-to-folder": "dist/cli/dafToFolder.mjs",
+    "daf-to-sql": "dist/cli/dafToSql.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "zip": "tsx src/cli/dafToZip.ts",
+    "folder": "tsx src/cli/dafToFolder.ts",
+    "sql": "tsx src/cli/dafToSql.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "yazl": "^3.3.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/yazl": "^3.3.1",
+    "tsdown": "^0.23.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitepress": "^1.6.4"
+  }
+}

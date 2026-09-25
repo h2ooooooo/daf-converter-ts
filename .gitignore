@@ -1,0 +1,11 @@
+node_modules/
+dist/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Never commit or publish real backups / dumps
+*.daf
+*.sql
+*.sql.gz
+*.zip
+*.tgz
